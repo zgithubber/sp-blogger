@@ -10,7 +10,8 @@ angular.module('spBlogger.posts.services', []).factory('postService', function (
 				content : 'Sample content...',
 				permalink : 'simple-title1',
 				author : 'Sandeep',
-				datePublished : '2012-04-04'
+				datePublished : '2012-04-04',
+				content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu ullamcorper risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum malesuada tellus et iaculis. Aenean pulvinar hendrerit velit, quis finibus justo viverra sed. Duis quis nibh non diam congue gravida pellentesque vitae tortor. Sed lobortis ornare iaculis.'
 			}, {
 				id : 2,
 				title : 'Simple title2',
