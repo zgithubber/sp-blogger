@@ -1,5 +1,7 @@
 'use strict'
 
+//angular.module('spBlogger.posts.services',[]);
+
 angular.module('spBlogger.posts.services', []).factory('postService', function () {
 	return {
 		posts : [{
