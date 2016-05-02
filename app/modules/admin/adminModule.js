@@ -8,7 +8,7 @@ angular.module('spBlogger.admin').config(['$stateProvider', '$locationProvider',
 		//abstract : true,
 		controller : 'AdminController',
 		templateUrl : 'modules/admin/views/admin-home.html'
-	});/* .state('admin.postNew', {
+	}) .state('admin.postNew', {
 		url : '/posts/new',
 		controller : 'PostCreationController',
 		templateUrl : 'modules/admin/views/admin-new-post.html'
@@ -20,5 +20,5 @@ angular.module('spBlogger.admin').config(['$stateProvider', '$locationProvider',
 		url : '',
 		controller : 'PostListController',
 		templateUrl : 'modules/admin/views/admin-all-posts.html'
-	}); */
+	});
 }]);

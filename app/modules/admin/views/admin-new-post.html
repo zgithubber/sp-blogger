@@ -5,7 +5,7 @@
 			<div class="form-group" ng-class="{'has-error':newPostForm.title.$dirty && newPostForm.title.$invalid}">
 				<label for="title" class="col-sm-2 control-label">Post Title</label>
 				<div class="col-sm-10">
-					<input type="text" name="title" ng-model="post.title" ng-required="true" class="form-control" id="title"placeholder="Title">
+					<input type="text" name="title" ng-model="post.title" ng-required="true" class="form-control" id="title" placeholder="Title">
 						<span class="error-message" ng-show="newPostForm.title.$dirty && newPostForm.title.$invalid">Title is mandatory</span>
 					</div>
 				</div>
@@ -13,7 +13,7 @@
 				<div class="form-group" ng-class="{'has-error':newPostForm.content.$dirty && newPostForm.content.$invalid}">
 					<label for="content" class="col-sm-2 control-label">Content</label>
 					<div class="col-sm-10">
-						<textarea cols="8" rows="6" name="content"class="form-control" ng-model="post.content" ng-required="true"id="content" placeholder="Content"></textarea>
+						<textarea cols="8" rows="6" name="content"class="form-control" ng-model="post.content" ng-required="true" id="content" placeholder="Content"></textarea>
 						<span class="error-message" ng-show="newPostForm.content.$dirty && newPostForm.content.$invalid">You need to havesome content!</span>
 					</div>
 				</div>
