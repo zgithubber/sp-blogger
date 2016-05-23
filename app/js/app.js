@@ -1,11 +1,12 @@
 'use strict'
 
-angular.module('spBlogger',['ui.router', 'spBlogger.admin', 'spBlogger.posts','spBlogger.controllers','spBlogger.directives','spBlogger.filters','spBlogger.services']);
+angular.module('spBlogger', ['ngResource', 'ui.router', 'spBlogger.admin', 'spBlogger.posts', 'spBlogger.controllers', 'spBlogger.directives', 'spBlogger.filters', 'spBlogger.services']);
 
-angular.module('spBlogger').value('version','V1.0');
+angular.module('spBlogger').value('version', 'V1.0');
 
-angular.module('spBlogger').run(['$state',function($state){
+angular.module('spBlogger').run(['$state', function ($state) {
 
-      $state.go('admin');
-	  
-}]);
+			$state.go('admin');
+
+		}
+	]);
