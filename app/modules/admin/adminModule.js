@@ -5,7 +5,7 @@ angular.module('spBlogger.admin', ['spBlogger.admin.controllers', 'spBlogger.adm
 angular.module('spBlogger.admin').config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
 	$stateProvider.state('admin', {
 		url : '/admin',
-		//abstract : true,
+		abstract : true,
 		controller : 'AdminController',
 		templateUrl : 'modules/admin/views/admin-home.html'
 	}) .state('admin.postNew', {
@@ -18,6 +18,7 @@ angular.module('spBlogger.admin').config(['$stateProvider', '$locationProvider',
 		templateUrl : 'modules/admin/views/admin-update-post.html'
 	}).state('admin.postViewAll', {
 		url : '',
+		//url: '/posts',
 		controller : 'PostListController',
 		templateUrl : 'modules/admin/views/admin-all-posts.html'
 	});

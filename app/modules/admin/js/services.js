@@ -14,5 +14,6 @@ angular.module('spBlogger.admin.services', []).factory('Post', ['$resource', 'AP
 				return $window.confirm(message); //Ask the users if they really want to delete the post entry
 			}
 		}
-	]).value('API_ENDPOINT', 'http://spblogger-sitepointdemos.rhcloud.com/api/posts/:id'); // This is our end point
+	]);
 
+angular.module('spBlogger.admin.services').value('API_ENDPOINT', 'http://spblogger-sitepointdemos.rhcloud.com/api/posts/:id'); // This is our end point
