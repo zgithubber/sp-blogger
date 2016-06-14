@@ -2,6 +2,7 @@
 	<label for="title" class="col-sm-2 control-label">Post Title</label>
 	<div class="col-sm-10">
 		<input type="text" name="title" ng-model="post.title" ng-required="true" class="form-control" id="title" placeholder="Title">
+			<span>Permalink:<i>/posts/[id]/{{post.title | permalink}}</i></span>
 			<span class="error-message" ng-show="postForm.title.$dirty && postForm.title.$invalid">Title is mandatory</span>
 	</div>
 </div>
@@ -9,6 +10,7 @@
 	<label for="content" class="col-sm-2 control-label">Content</label>
 	<div class="col-sm-10">
 		<textarea cols="8" rows="6" name="content" class="form-control" ng-model="post.content" ng-required="true" id="content" placeholder="Content"></textarea>
+		<span>{{post.content | wordcount}} words</span> <br/>
 		<span class="error-message" ng-show="postForm.content.$dirty && postForm.content.$invalid">You need to have some content!</span>
 	</div>
 </div>

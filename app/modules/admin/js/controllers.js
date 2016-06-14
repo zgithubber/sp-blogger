@@ -2,12 +2,12 @@
 
 angular.module('spBlogger.admin.controllers', []).controller('AdminController', ['$scope', function ($scope) {}
 
-	]).controller('PostCreationController', ['$scope', '$state', 'Post', function ($scope, $state, Post) {
+	]).controller('PostCreationController', ['$scope', '$state', 'Post', function ($scope, $state, Post,permalinkFilter) {
 			$scope.post = new Post(); // Create an empty Post instance
 			$scope.buttonText = "Create"; // Set initial label for button
 			$scope.savePost = function () {
 				$scope.buttonText = "Saving. . ."; //Once clicked change button text
-				$scope.post.permalink = angular.lowercase($scope.post.title).replace(/[\s]/g, '-'); //generate permalink
+				$scope.post.permalink = permalinkFilter($scope.post.title); //generate permalink
 				$scope.post.$save(function () {
 					$state.go('admin.postViewAll'); //Once saved go to state `admin.postViewAll`
 				});
