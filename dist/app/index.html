@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="spBlogger">
+	<head>
+		<meta charset="utf-8">
+		<base href="/">
+		<title>The Single Page Blogger</title>
+		<link rel="stylesheet" href="built/app.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<br/>
+			<div class="jumbotron text-center">
+				<h1>The Single Page Blogger</h1>
+				<p>One stop blogging solution</p>
+			</div>
+			<div ui-view></div>
+			<div class="row footer">
+				<div class="col-xs-12 text-center">
+					<p>The Single Page Blogger <app-version/></p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="built/app.min.js"></script>
+</html>
