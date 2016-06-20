@@ -1,29 +1,10 @@
 'use strict'
 
-angular.module('spBlogger', ['pascalprecht.translate', 'ngAnimate', 'ngResource', 'ui.router', 'spBlogger.admin', 'spBlogger.posts', 'spBlogger.controllers', 'spBlogger.directives', 'spBlogger.filters', 'spBlogger.services']);
+angular.module('spBlogger', ['ngCookies', 'pascalprecht.translate', 'ngAnimate', 'ngResource', 'ui.router', 'spBlogger.admin', 'spBlogger.posts', 'spBlogger.controllers', 'spBlogger.directives', 'spBlogger.filters', 'spBlogger.services']);
 
 angular.module('spBlogger').value('version', 'V1.0');
 
-/* angular.module('spBlogger').run(['$state', function ($state) {
-
-			$state.go('admin.postViewAll');
-
-		}
-	]); */
-
-angular.module('spBlogger').run(['$state', '$rootScope', '$translate', function ($state, $rootScope, $translate) {
-			$state.go('allPosts');
-			$rootScope.languagePreference = {
-				currentLanguage : 'en'
-			};
-			$rootScope.languagePreference.switchLanguage = function (key) {
-				$translate.use(key);
-				$rootScope.languagePreference.currentLanguage = key;
-			}
-		}
-	]);
-
-angular.module('spBlogger').config(['$translateProvider', function ($translateProvider) {
+angular.module('spBlogger').config(['$translateProvider', '$httpProvider', function ($translateProvider, $httpProvider) {
 			$translateProvider.translations('en', {
 				TITLE : 'The Single Page Blogger',
 				SUBTITLE : 'One Stop Blogging Solution',
@@ -46,5 +27,25 @@ angular.module('spBlogger').config(['$translateProvider', function ($translatePr
 				ADD : 'Commenta'
 			});
 			$translateProvider.preferredLanguage('en');
+
+			$httpProvider.defaults.withCredentials = true;
 		}
 	]);
+angular.module('spBlogger').run(['$state', '$rootScope', '$translate', function ($state, $rootScope, $translate) {
+			$state.go('allPosts');
+			$rootScope.languagePreference = {
+				currentLanguage : 'en'
+			};
+			$rootScope.languagePreference.switchLanguage = function (key) {
+				$translate.use(key);
+				$rootScope.languagePreference.currentLanguage = key;
+			}
+		}
+	]);
+	
+	/* angular.module('spBlogger').run(['$state', function ($state) {
+
+$state.go('admin.postViewAll');
+
+}
+]); */

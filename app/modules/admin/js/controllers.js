@@ -2,7 +2,7 @@
 
 angular.module('spBlogger.admin.controllers', []).controller('AdminController', ['$scope', function ($scope) {}
 
-	]).controller('PostCreationController', ['$scope', '$state', 'Post', function ($scope, $state, Post,permalinkFilter) {
+	]).controller('PostCreationController', ['$scope', '$state', 'Post', function ($scope, $state, Post, permalinkFilter) {
 			$scope.post = new Post(); // Create an empty Post instance
 			$scope.buttonText = "Create"; // Set initial label for button
 			$scope.savePost = function () {
@@ -35,6 +35,26 @@ angular.module('spBlogger.admin.controllers', []).controller('AdminController', 
 						});
 					});
 				}
+			}
+		}
+	]).controller('LoginController', ['$scope', 'authService', '$state', function ($scope, authService, $state) {
+			$scope.buttonText = "Login";
+			$scope.login = function () {
+				$scope.buttonText = "Logging in. . .";
+				authService.login($scope.credentials.username, $scope.credentials.password).then(function (data) {
+					$state.go('admin.postViewAll');
+				}, function (err) {
+					$scope.invalidLogin = true;
+				}).finally (function () {
+						$scope.buttonText = "Login";
+					});
+			}
+		}
+	]).controller('AdminController', ['$scope', 'authService', '$state', 'user', function ($scope, authService, $state, user) {
+			$scope.logout = function () {
+				authService.logout().then(function () {
+					$state.go('login');
+				});
 			}
 		}
 	]);

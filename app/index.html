@@ -12,11 +12,12 @@
 	</head>
 	<body>
 		<div class="btn-group btn-toggle">
-<button class="btn btn-xs btn-default" ng-class="{en:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('en')" >English</button>
-<button class="btn btn-xs btn-primary" ng-class="{de:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('de')">German</button>
-<button class="btn btn-xs btn-primary" ng-class="{it:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('it')">Italian</button>
 </div>
 		<div class="container">
+		<button class="btn btn-xs btn-default" ng-class="{en:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('en')" >English</button>
+		<button class="btn btn-xs btn-primary" ng-class="{de:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('de')">German</button>
+		<button class="btn btn-xs btn-primary" ng-class="{it:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('it')">Italian</button>
+
 			<br/>
 			<div class="jumbotron text-center">
 				<h1>{{'TITLE' | translate}}</h1>
@@ -31,11 +32,13 @@
 		</div>
 	</body>
 	<!-- build:js app/built/app.min.js -->
+	
 	<script src="lib/angular/angular.min.js"></script>
 	<script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
 	<script src="lib/angular/angular-resource.js"></script>
 	<script src="lib/angular/angular-animate.js"></script>
 	<script src="lib/angular/angular-translate.js"></script>
+	<script src="lib/angular/angular-cookies.js"></script>
 	
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
