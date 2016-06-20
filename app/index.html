@@ -11,16 +11,21 @@
 		<!-- endbuild -->
 	</head>
 	<body>
+		<div class="btn-group btn-toggle">
+<button class="btn btn-xs btn-default" ng-class="{en:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('en')" >English</button>
+<button class="btn btn-xs btn-primary" ng-class="{de:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('de')">German</button>
+<button class="btn btn-xs btn-primary" ng-class="{it:'active'}[languagePreference.currentLanguage]" ng-click="languagePreference.switchLanguage('it')">Italian</button>
+</div>
 		<div class="container">
 			<br/>
 			<div class="jumbotron text-center">
-				<h1>The Single Page Blogger</h1>
-				<p>One stop blogging solution</p>
+				<h1>{{'TITLE' | translate}}</h1>
+				<p>{{'SUBTITLE' | translate}}</p>
 			</div>
 			<div ui-view></div>
 			<div class="row footer">
 				<div class="col-xs-12 text-center">
-					<p>The Single Page Blogger <app-version/></p>
+					<p>{{'TITLE' | translate}} <app-version/></p>
 				</div>
 			</div>
 		</div>
@@ -30,6 +35,7 @@
 	<script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
 	<script src="lib/angular/angular-resource.js"></script>
 	<script src="lib/angular/angular-animate.js"></script>
+	<script src="lib/angular/angular-translate.js"></script>
 	
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
